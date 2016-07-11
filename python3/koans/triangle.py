@@ -17,6 +17,13 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
+    if min([a, b, c]) <= 0:
+        raise TriangleError
+
+    x,y,z = sorted([a, b, c])
+    if x + y <= z:
+        raise TriangleError
+
     if a == b and b == c:
         return "equilateral"
     elif a == b or a == c or b == c:
